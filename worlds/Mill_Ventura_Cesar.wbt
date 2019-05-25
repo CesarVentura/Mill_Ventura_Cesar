@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.7135643912847454 -0.6818344284661764 -0.1610207180726539 0.6751019699544195
-  position -0.48017102108222964 3.0586854805230095 1.965188946900593
+  orientation -0.5515870771250866 -0.7867173507817098 -0.2771777522233911 1.1584484016596932
+  position -0.9666808178595944 3.436736822454203 1.409636687415054
 }
 TexturedBackground {
 }
@@ -381,8 +381,8 @@ Solid {
         maxStop -1
       }
       endPoint Solid {
-        translation 0 0.55 0
-        rotation 1 0 0 1.5707996938995745
+        translation -8.212190820843436e-08 0.5498610525168179 3.3139255528733224e-06
+        rotation 0.9999967617238308 -0.0017994975616123705 0.0017995417132291554 1.570811186318304
         children [
           DEF CYL2 Shape {
             appearance PBRAppearance {
@@ -394,7 +394,8 @@ Solid {
           }
           HingeJoint {
             jointParameters HingeJointParameters {
-              axis 0 0 1
+              axis 0 1 0
+              anchor 0.01 0 0
             }
             endPoint Solid {
               translation 0 0.5 0
@@ -403,7 +404,10 @@ Solid {
                   children [
                     Transform {
                       children [
-                        Shape {
+                        DEF finalwill1 Shape {
+                          appearance PBRAppearance {
+                            baseColor 0.7686274509803922 0.6274509803921569 0
+                          }
                           geometry Box {
                             size 1 0.01 0.1
                           }
@@ -411,9 +415,12 @@ Solid {
                       ]
                     }
                     Transform {
-                      rotation 0 1 0 1.5708003061004252
+                      rotation 0 1 0 1.5707996938995747
                       children [
-                        Shape {
+                        DEF finalwill1 Shape {
+                          appearance PBRAppearance {
+                            baseColor 0.7686274509803922 0.6274509803921569 0
+                          }
                           geometry Box {
                             size 1 0.01 0.1
                           }
@@ -423,6 +430,9 @@ Solid {
                   ]
                 }
               ]
+              boundingObject USE finalwill1
+              physics Physics {
+              }
             }
           }
         ]
