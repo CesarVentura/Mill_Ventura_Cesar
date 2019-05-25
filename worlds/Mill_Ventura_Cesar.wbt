@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.18225137661042817 -0.969149443743221 -0.16593309319062674 1.544390152307338
-  position -1.3876413357143276 2.40119122110713 -0.32430159800816466
+  orientation -0.7135643912847454 -0.6818344284661764 -0.1610207180726539 0.6751019699544195
+  position -0.48017102108222964 3.0586854805230095 1.965188946900593
 }
 TexturedBackground {
 }
@@ -366,6 +366,8 @@ Solid {
   translation 0.45 1.5 -0.3899999999999999
   children [
     Shape {
+      appearance PBRAppearance {
+      }
       geometry Cylinder {
         height 1
         radius 0.15
@@ -375,17 +377,52 @@ Solid {
       jointParameters HingeJointParameters {
         axis 0 1 0
         anchor 0 0.15 0
+        minStop 1
+        maxStop -1
       }
       endPoint Solid {
-        translation 0 0.55 0.25
-        rotation 1 0 0 1.5707996938995747
+        translation 0 0.55 0
+        rotation 1 0 0 1.5707996938995745
         children [
-          Shape {
+          DEF CYL2 Shape {
             appearance PBRAppearance {
             }
             geometry DEF G_Cyl2 Cylinder {
-              height 0.5
+              height 1
               radius 0.05
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0 0 1
+            }
+            endPoint Solid {
+              translation 0 0.5 0
+              children [
+                Group {
+                  children [
+                    Transform {
+                      children [
+                        Shape {
+                          geometry Box {
+                            size 1 0.01 0.1
+                          }
+                        }
+                      ]
+                    }
+                    Transform {
+                      rotation 0 1 0 1.5708003061004252
+                      children [
+                        Shape {
+                          geometry Box {
+                            size 1 0.01 0.1
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           }
         ]
