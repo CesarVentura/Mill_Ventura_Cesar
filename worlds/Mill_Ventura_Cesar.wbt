@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.3685471104012268 -0.927346044673795 -0.06482546446246115 6.100252568731927
-  position 1.3411173124161175 0.7370995327632753 4.670448414256218
+  orientation -0.20120885563773017 -0.9600731642965397 -0.19435667112446858 1.60775936715049
+  position -1.3853128148798808 2.4921705779201275 -0.4201585631308832
 }
 TexturedBackground {
 }
@@ -361,4 +361,36 @@ DEF G_Face4 Solid {
     }
   ]
   name "solid(4)"
+}
+Solid {
+  translation 0.44999999999999996 1.5 -0.3899999999999999
+  children [
+    Shape {
+      geometry Cylinder {
+        height 1
+        radius 0.15
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0 0.15 0
+      }
+      endPoint Solid {
+        translation 0 0.552 0
+        rotation 1 0 0 1.5707996938995747
+        children [
+          Shape {
+            appearance PBRAppearance {
+            }
+            geometry Cylinder {
+              height 1
+              radius 0.05
+            }
+          }
+        ]
+      }
+    }
+  ]
+  name "solid(6)"
 }
