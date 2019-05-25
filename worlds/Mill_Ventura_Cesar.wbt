@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.20120885563773017 -0.9600731642965397 -0.19435667112446858 1.60775936715049
-  position -1.3853128148798808 2.4921705779201275 -0.4201585631308832
+  orientation -0.18225137661042817 -0.969149443743221 -0.16593309319062674 1.544390152307338
+  position -1.3876413357143276 2.40119122110713 -0.32430159800816466
 }
 TexturedBackground {
 }
@@ -363,7 +363,7 @@ DEF G_Face4 Solid {
   name "solid(4)"
 }
 Solid {
-  translation 0.44999999999999996 1.5 -0.3899999999999999
+  translation 0.45 1.5 -0.3899999999999999
   children [
     Shape {
       geometry Cylinder {
@@ -377,18 +377,21 @@ Solid {
         anchor 0 0.15 0
       }
       endPoint Solid {
-        translation 0 0.552 0
+        translation 0 0.55 0.25
         rotation 1 0 0 1.5707996938995747
         children [
           Shape {
             appearance PBRAppearance {
             }
-            geometry Cylinder {
-              height 1
+            geometry DEF G_Cyl2 Cylinder {
+              height 0.5
               radius 0.05
             }
           }
         ]
+        boundingObject USE G_Cyl2
+        physics Physics {
+        }
       }
     }
   ]
