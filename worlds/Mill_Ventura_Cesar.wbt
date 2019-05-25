@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.4374202805236237 0.896529853866466 0.06998370748115287 0.19962070376775923
-  position 0.392837183241567 0.9040174736232054 1.217111840591291
+  orientation -0.01517179264774467 -0.9916073638905039 -0.12839257216046498 2.955624843484109
+  position -0.2118008712805395 0.30804841502582936 -2.1131254116062355
 }
 TexturedBackground {
 }
@@ -11,12 +11,12 @@ TexturedBackgroundLight {
 }
 Floor {
 }
-Solid {
+DEF G_Basedown Solid {
   translation 0.4 0.025 -0.4
   children [
     Shape {
-      appearance PBRAppearance {
-        baseColor 0.45098039215686275 0.8235294117647058 0.08627450980392157
+      appearance DEF C_greenbase PBRAppearance {
+        baseColor 0.5411764705882353 0.8862745098039215 0.20392156862745098
       }
       geometry Box {
         size 1 0.05 1
@@ -25,13 +25,11 @@ Solid {
   ]
   name "solid(1)"
 }
-Solid {
+DEF G_Base2 Solid {
   translation 0.4 0.975 -0.4
   children [
     Shape {
-      appearance PBRAppearance {
-        baseColor 0.45098039215686275 0.8235294117647058 0.08627450980392157
-      }
+      appearance USE C_greenbase
       geometry Box {
         size 1 0.05 1
       }
@@ -39,16 +37,17 @@ Solid {
   ]
   name "solid(2)"
 }
-Solid {
+DEF G_Face1 Solid {
   translation -0.05 0.05000000000000003 0.095
   children [
-    Group {
+    DEF G_Box1 Group {
       children [
         Transform {
           translation 0 0.45 0
           children [
             Shape {
-              appearance PBRAppearance {
+              appearance DEF C_box1 PBRAppearance {
+                baseColor 0.6784313725490196 0.4980392156862745 0.6588235294117647
               }
               geometry Box {
                 size 0.1 0.9 0.01
@@ -61,8 +60,7 @@ Solid {
           rotation 0 0 1 1.5707996938995747
           children [
             Shape {
-              appearance PBRAppearance {
-              }
+              appearance USE C_box1
               geometry Box {
                 size 0.1 0.9 0.01
               }
@@ -74,8 +72,7 @@ Solid {
           rotation 0 0 1 1.5707996938995747
           children [
             Shape {
-              appearance PBRAppearance {
-              }
+              appearance USE C_box1
               geometry Box {
                 size 0.1 0.9 0.01
               }
@@ -86,8 +83,7 @@ Solid {
           translation 0.9000000000000004 0.45 0
           children [
             Shape {
-              appearance PBRAppearance {
-              }
+              appearance USE C_box1
               geometry Box {
                 size 0.1 0.9 0.01
               }
@@ -99,8 +95,7 @@ Solid {
           rotation 0 0 1 0.85
           children [
             Shape {
-              appearance PBRAppearance {
-              }
+              appearance USE C_box1
               geometry Box {
                 size 0.07 1.2 0.01
               }
@@ -112,8 +107,7 @@ Solid {
           rotation 0 0 1 -0.85
           children [
             Shape {
-              appearance PBRAppearance {
-              }
+              appearance USE C_box1
               geometry Box {
                 size 0.07 1.2 0.01
               }
@@ -123,4 +117,248 @@ Solid {
       ]
     }
   ]
+}
+DEF G_Face2 Solid {
+  translation -0.05 0.05000000000000003 -0.8950000000000002
+  children [
+    DEF G_Box1 Group {
+      children [
+        Transform {
+          translation 0 0.45 0
+          children [
+            Shape {
+              appearance USE C_box1
+              geometry Box {
+                size 0.1 0.9 0.01
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0.45000000000000023 0.85 0
+          rotation 0 0 1 1.5707996938995747
+          children [
+            Shape {
+              appearance USE C_box1
+              geometry Box {
+                size 0.1 0.9 0.01
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0.45000000000000023 0.049999999999999996 0
+          rotation 0 0 1 1.5707996938995747
+          children [
+            Shape {
+              appearance USE C_box1
+              geometry Box {
+                size 0.1 0.9 0.01
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0.9000000000000004 0.45 0
+          children [
+            Shape {
+              appearance USE C_box1
+              geometry Box {
+                size 0.1 0.9 0.01
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0.45185983993961215 0.443914196703047 0
+          rotation 0 0 1 0.85
+          children [
+            Shape {
+              appearance USE C_box1
+              geometry Box {
+                size 0.07 1.2 0.01
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0.4454823890947886 0.44959288765413774 0
+          rotation 0 0 1 -0.85
+          children [
+            Shape {
+              appearance USE C_box1
+              geometry Box {
+                size 0.07 1.2 0.01
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+  name "solid(3)"
+}
+DEF G_Face3 Solid {
+  translation 0.895 0.05000000000000003 0.05499645841839673
+  rotation 0 1 0 1.5708003061004252
+  children [
+    DEF G_Box3 Group {
+      children [
+        Transform {
+          translation 0 0.45 0
+          children [
+            Shape {
+              appearance DEF C_BOX3 PBRAppearance {
+                baseColor 0.9294117647058824 0.8313725490196079 0
+              }
+              geometry Box {
+                size 0.1 0.9 0.01
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0.45000000000000023 0.85 0
+          rotation 0 0 1 1.5707996938995747
+          children [
+            Shape {
+              appearance USE C_BOX3
+              geometry Box {
+                size 0.1 0.9 0.01
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0.45000000000000023 0.049999999999999996 0
+          rotation 0 0 1 1.5707996938995747
+          children [
+            Shape {
+              appearance USE C_BOX3
+              geometry Box {
+                size 0.1 0.9 0.01
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0.9000000000000004 0.45 0
+          children [
+            Shape {
+              appearance USE C_BOX3
+              geometry Box {
+                size 0.1 0.9 0.01
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0.45185983993961215 0.443914196703047 0
+          rotation 0 0 1 0.85
+          children [
+            Shape {
+              appearance USE C_BOX3
+              geometry Box {
+                size 0.07 1.2 0.01
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0.4454823890947886 0.44959288765413774 0
+          rotation 0 0 1 -0.85
+          children [
+            Shape {
+              appearance USE C_BOX3
+              geometry Box {
+                size 0.07 1.2 0.01
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+  name "solid(5)"
+}
+DEF G_Face4 Solid {
+  translation -0.095 0.05000000000000003 0.05500015917253832
+  rotation 0 1 0 1.5708003061004252
+  children [
+    DEF G_Box3 Group {
+      children [
+        Transform {
+          translation 0 0.45 0
+          children [
+            Shape {
+              appearance USE C_BOX3
+              geometry Box {
+                size 0.1 0.9 0.01
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0.45000000000000023 0.85 0
+          rotation 0 0 1 1.5707996938995747
+          children [
+            Shape {
+              appearance USE C_BOX3
+              geometry Box {
+                size 0.1 0.9 0.01
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0.45000000000000023 0.049999999999999996 0
+          rotation 0 0 1 1.5707996938995747
+          children [
+            Shape {
+              appearance USE C_BOX3
+              geometry Box {
+                size 0.1 0.9 0.01
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0.9000000000000004 0.45 0
+          children [
+            Shape {
+              appearance USE C_BOX3
+              geometry Box {
+                size 0.1 0.9 0.01
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0.45185983993961215 0.443914196703047 0
+          rotation 0 0 1 0.85
+          children [
+            Shape {
+              appearance USE C_BOX3
+              geometry Box {
+                size 0.07 1.2 0.01
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0.4454823890947886 0.44959288765413774 0
+          rotation 0 0 1 -0.85
+          children [
+            Shape {
+              appearance USE C_BOX3
+              geometry Box {
+                size 0.07 1.2 0.01
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+  name "solid(4)"
 }
